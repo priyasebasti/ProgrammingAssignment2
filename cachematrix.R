@@ -1,7 +1,7 @@
 ## Program Assignment 2 - The functions below cache the inverse of a matrix
 
 
-## makeCacheMatrix sets and gets the matrix and sets and gets the inverse
+## The makeCacheMatrix function sets and gets the matrix and sets and gets the inverse
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -24,14 +24,14 @@ makeCacheMatrix <- function(x = matrix()) {
 ## data and sets the value of the inverse in the cache via the setinverse function.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  ## Return a matrix that is the inverse of 'x'
   m <- x$getinverse()
   if(!is.null(m)) {
     message("getting cached data")
     return(m)
   }
   data <- x$get()
-  m <- Inverse(data, ...)
+  m <- solve(data, ...)
   x$setinverse(m)
   m
 }
